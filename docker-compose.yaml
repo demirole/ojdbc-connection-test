@@ -9,5 +9,7 @@ services:
       DB_CONNECTION_STRING: ${MY_DB_CONNECTION_STRING}
       DB_USER: ${MY_DB_USER}
       DB_PASSWORD: ${MY_DB_PASSWORD}
+    volumes:
+      - ./wallet/tnsnames.ora:/etc/tnsnames.ora:ro
 
 

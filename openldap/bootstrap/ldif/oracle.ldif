@@ -1,0 +1,11 @@
+dn: cn=OracleContext,dc=example,dc=org
+changetype: add
+objectclass: orclContext
+cn: OracleContext 
+
+dn: cn=oracledb,cn=OracleContext,dc=example,dc=org
+changetype: add
+objectclass: top
+objectclass: orclNetService
+cn: oracledb
+orclNetDescString: (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=pdxendb10.profidatagroup.com)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=X_MOBI_P20180221_553_NTEST_DELE_TEST)(SERVER=DEDICATED)))

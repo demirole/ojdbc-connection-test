@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  tester:
+    depends_on:
+      - ldap_server
+
+  ldap_server:
+    build:
+      context: openldap
+    image: localhost/ojdbc-connection-openldap

@@ -11,5 +11,9 @@ done
 
 export JAVACMD CLASSPATH
 
-exec /execute_query "$@"
+if [[ $1 =~ ^select|^- ]] ; then
+  exec /execute_query "$@"
+else
+  exec "$@"
+fi
 

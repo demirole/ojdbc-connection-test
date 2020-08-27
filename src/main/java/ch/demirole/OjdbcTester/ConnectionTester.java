@@ -5,7 +5,7 @@ import java.util.Properties;
 
 public class ConnectionTester {
 
-	private static final String TEST_QUERY = "select 1 from dual;";
+	private static final String TEST_QUERY = "select 1 from dual";
 
 	public void invoke(String connectionUrl, Properties connectionProperties) throws SQLException, ClassNotFoundException {
 		Class.forName("oracle.jdbc.driver.OracleDriver");

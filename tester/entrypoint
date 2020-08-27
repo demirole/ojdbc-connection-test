@@ -11,6 +11,10 @@ done
 
 export JAVACMD CLASSPATH
 
+if [[ $TNS_ADMIN != '/etc' ]] ; then
+  cp /etc/ojdbc.properties $TNS_ADMIN
+fi
+
 if [[ $1 =~ ^select|^- ]] ; then
   exec /execute_query "$@"
 else

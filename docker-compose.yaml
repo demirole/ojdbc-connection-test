@@ -7,10 +7,11 @@ services:
       dockerfile: tester/Dockerfile
     image: localhost/ojdbc-connection-tester
     environment:
-      DB_CONNECTION_STRING: ${MY_DB_CONNECTION_STRING}
+      DB_CONNECTION_STRING: "jdbc:oracle:thin:@${MY_DB_CONNECTION_STRING}"
       DB_USER: ${MY_DB_USER}
       DB_PASSWORD: ${MY_DB_PASSWORD}
+      TNS_ADMIN: ${MY_TNS_ADMIN:-/etc}
     volumes:
-      - ./wallet/tnsnames.ora:/etc/tnsnames.ora:ro
+      - ./wallet/tnsnames.ora:${MY_TNS_ADMIN:-/etc}/tnsnames.ora:ro
 
 

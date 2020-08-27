@@ -3,9 +3,10 @@ version: '3.8'
 services:
   tester:
     environment:
-      DB_CONNECTION_STRING: "/${MY_DB_CONNECTION_STRING}"
+      DB_CONNECTION_STRING: "jdbc:oracle:thin:/@${MY_DB_CONNECTION_STRING}"
+      DB_USER: ""
+      DB_PASSWORD: ""
       USE_WALLET: 1
     volumes:
-        - ./wallet/cwallet.sso:/etc/cwallet.sso:ro
-        - ./wallet/ewallet.p12:/etc/ewallet.p12:ro
-        - ./wallet/tnsnames.ora:/etc/tnsnames.ora:ro
+        - ./wallet/cwallet.sso:${MY_TNS_ADMIN:-/etc}/cwallet.sso:ro
+        - ./wallet/ewallet.p12:${MY_TNS_ADMIN:-/etc}/ewallet.p12:ro

@@ -13,5 +13,5 @@ fi
 
 exec "${JAVACMD}" -cp ${CLASSPATH} ch.demirole.OjdbcTester.App \
     ${CREDENTIAL_OPTS} \
-    -c "jdbc:oracle:thin:${DB_CONNECTION_STRING}?TNS_ADMIN=/etc" \
+    -c "${DB_CONNECTION_STRING}" \
     "$1"

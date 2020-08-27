@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  ojdbc-connection-test:
+  tester:
     build:
       context: .
     image: localhost/ojdbc-connection-test

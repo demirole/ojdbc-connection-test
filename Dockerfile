@@ -2,7 +2,7 @@ FROM adoptopenjdk:11-hotspot-bionic
 
 RUN mkdir /service
 
-COPY  build/libs/ojdbc-connection-test-1.0-SNAPSHOT-all.jar /service/ojdbc-connection-test-all.jar
+COPY build/libs /service
 
 COPY context/entrypoint /entrypoint
 COPY context/execute_query /execute_query

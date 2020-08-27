@@ -4,7 +4,8 @@ services:
   tester:
     build:
       context: .
-    image: localhost/ojdbc-connection-test
+      dockerfile: tester/Dockerfile
+    image: localhost/ojdbc-connection-tester
     environment:
       DB_CONNECTION_STRING: ${MY_DB_CONNECTION_STRING}
       DB_USER: ${MY_DB_USER}

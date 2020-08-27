@@ -4,9 +4,9 @@ RUN mkdir /service
 
 COPY build/libs /service
 
-COPY context/entrypoint /entrypoint
-COPY context/execute_query /execute_query
-COPY context/ojdbc.properties /etc/ojdbc.properties
+COPY tester/entrypoint /entrypoint
+COPY tester/execute_query /execute_query
+COPY tester/ojdbc.properties /etc/ojdbc.properties
 
 ENTRYPOINT ["/entrypoint"]
 CMD ["select 1 from dual"]

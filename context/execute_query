@@ -10,5 +10,5 @@ if [[ -n $DB_PASSWORD ]] ; then
 fi
 
 exec "${JAVACMD}" -jar /service/ojdbc-connection-test-all.jar \
-    "${CREDENTIAL_OPTS}" \
+    ${CREDENTIAL_OPTS} \
     "jdbc:oracle:thin:${DB_CONNECTION_STRING}?TNS_ADMIN=/etc"

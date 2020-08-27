@@ -1,0 +1,15 @@
+#!/bin/bash
+
+JARS=/service
+JAVACMD=java
+
+unset CLASSPATH
+for J in $(cd "${JARS}"; ls *.jar)
+do
+    CLASSPATH=${CLASSPATH}${CLASSPATH:+:}${JARS}/${J}
+done
+
+export JAVACMD CLASSPATH
+
+exec /execute_query "$@"
+

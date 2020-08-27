@@ -1,0 +1,14 @@
+#!/bin/bash
+
+CREDENTIAL_OPTS=
+if [[ -n $DB_USER ]] ; then
+  CREDENTIAL_OPTS="${CREDENTIAL_OPTS} -u ${DB_USER}"
+fi
+
+if [[ -n $DB_PASSWORD ]] ; then
+  CREDENTIAL_OPTS="${CREDENTIAL_OPTS} -p ${DB_PASSWORD}"
+fi
+
+exec "${JAVACMD}" -jar /service/ojdbc-connection-test-all.jar \
+    "${CREDENTIAL_OPTS}" \
+    "jdbc:oracle:thin:${DB_CONNECTION_STRING}?TNS_ADMIN=/etc"

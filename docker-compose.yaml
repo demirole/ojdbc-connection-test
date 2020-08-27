@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  ojdbc-connection-test:
+    build:
+      context: .
+    image: localhost/ojdbc-connection-test
+    environment:
+      DB_CONNECTION_STRING: ${MY_DB_CONNECTION_STRING}
+      DB_USER: ${MY_DB_USER}
+      DB_PASSWORD: ${MY_DB_PASSWORD}
+
+

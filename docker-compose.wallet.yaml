@@ -2,7 +2,10 @@ version: '3.8'
 
 services:
   tester:
+    environment:
+      DB_CONNECTION_STRING: "/${MY_DB_CONNECTION_STRING}"
+      USE_WALLET: 1
     volumes:
-      - ./wallet/cwallet.sso:/etc/cwallet.sso:ro
-      - ./wallet/ewallet.p12:/etc/ewallet.p12:ro
-      - ./wallet/tnsnames.ora:/etc/tnsnames.ora:ro
+        - ./wallet/cwallet.sso:/etc/cwallet.sso:ro
+        - ./wallet/ewallet.p12:/etc/ewallet.p12:ro
+        - ./wallet/tnsnames.ora:/etc/tnsnames.ora:ro

@@ -1,12 +1,14 @@
 #!/bin/bash
 
 CREDENTIAL_OPTS=
-if [[ -n $DB_USER ]] ; then
-  CREDENTIAL_OPTS="${CREDENTIAL_OPTS} -u ${DB_USER}"
-fi
+if [[ -z $USE_WALLET || $USE_WALLET == 0 ]] ; then
+    if [[ -n $DB_USER ]] ; then
+      CREDENTIAL_OPTS="${CREDENTIAL_OPTS} -u ${DB_USER}"
+    fi
 
-if [[ -n $DB_PASSWORD ]] ; then
-  CREDENTIAL_OPTS="${CREDENTIAL_OPTS} -p ${DB_PASSWORD}"
+    if [[ -n $DB_PASSWORD ]] ; then
+      CREDENTIAL_OPTS="${CREDENTIAL_OPTS} -p ${DB_PASSWORD}"
+    fi
 fi
 
 exec "${JAVACMD}" -cp ${CLASSPATH} ch.demirole.OjdbcTester.App \

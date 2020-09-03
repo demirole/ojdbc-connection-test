@@ -3,9 +3,12 @@ version: '3.8'
 services:
   tester:
     depends_on:
-      - ldap_server
+      - ldap-server
+    volumes:
+      - ./wallet/sqlnet.ora:${MY_TNS_ADMIN:-/etc}/sqlnet.ora:ro
+      - ./wallet/ldap.ora:${MY_TNS_ADMIN:-/etc}/ldap.ora:ro
 
-  ldap_server:
+  ldap-server:
     build:
       context: openldap
     image: localhost/ojdbc-connection-openldap

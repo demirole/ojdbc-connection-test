@@ -3,7 +3,7 @@ version: '3.8'
 services:
   tester:
     environment:
-      DB_CONNECTION_STRING: "jdbc:oracle:thin:/@${MY_DB_CONNECTION_STRING}"
+      DB_CONNECTION_STRING: "${MY_CONNECTION_PREFIX}${MY_DB_CONNECTION_STRING}"
       DB_USER: ""
       DB_PASSWORD: ""
       USE_WALLET: 1

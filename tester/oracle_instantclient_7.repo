@@ -1,0 +1,5 @@
+[oracle-instantclient-7]
+name=Latest packages for Oracle Instant Client on Oracle Linux 7 (x86_64)
+baseurl=http://yum.oracle.com/repo/OracleLinux/OL7/oracle/instantclient/x86_64
+enabled=1
+gpgcheck=0

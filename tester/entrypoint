@@ -2,6 +2,8 @@
 
 JARS=/service
 JAVACMD=java
+ORACLE_HOME=/usr/lib/oracle/19.6/client64
+LD_LIBRARY_PATH=${ORACLE_HOME}/lib${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH}
 
 unset CLASSPATH
 for J in $(cd "${JARS}"; ls *.jar)
@@ -9,7 +11,7 @@ do
     CLASSPATH=${CLASSPATH}${CLASSPATH:+:}${JARS}/${J}
 done
 
-export JAVACMD CLASSPATH
+export JAVACMD CLASSPATH LD_LIBRARY_PATH
 
 if [[ $TNS_ADMIN != '/etc' ]] ; then
   cp /etc/ojdbc.properties $TNS_ADMIN

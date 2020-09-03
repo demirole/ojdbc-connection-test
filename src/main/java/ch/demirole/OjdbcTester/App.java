@@ -31,6 +31,7 @@ public class App implements Runnable {
 		testStatement = sanitizeSQLStatement(testStatement);
 		Properties connectionProperties = createProperties(userName, password);
 		try {
+			System.out.println(">> Trying to create a connection to " + connectionUrl);
 			new ConnectionTester().invoke(connectionUrl, connectionProperties, testStatement);
 		} catch (SQLException throwables) {
 			throwables.printStackTrace();

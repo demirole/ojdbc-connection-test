@@ -3,9 +3,9 @@ changetype: add
 objectclass: orclContext
 cn: OracleContext 
 
-dn: cn=oracledb,cn=OracleContext,dc=example,dc=org
+dn: cn=X_MOBI_P20180221_553_NTEST_DELE_TEST,cn=OracleContext,dc=example,dc=org
 changetype: add
 objectclass: top
 objectclass: orclNetService
-cn: oracledb
+cn: X_MOBI_P20180221_553_NTEST_DELE_TEST
 orclNetDescString: (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=pdxendb10.profidatagroup.com)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=X_MOBI_P20180221_553_NTEST_DELE_TEST)(SERVER=DEDICATED)))
